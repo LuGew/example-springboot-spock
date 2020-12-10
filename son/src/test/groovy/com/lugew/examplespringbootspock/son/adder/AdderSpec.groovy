@@ -1,14 +1,17 @@
 package com.lugew.examplespringbootspock.son.adder
 
 import spock.lang.Specification
+import spock.lang.Subject
 
 /**
  * @author LuGew*
  * @since 2020/12/8
  */
+@Subject(Adder.class)
 class AdderSpec extends Specification {
     def "加法返回正确值 #a+#b=#c"() {
         given: "初始化加法器"
+
         Adder adder = new Adder()
         expect: "返回正确值"
         adder.add(a, b) == c
